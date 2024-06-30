@@ -11,7 +11,13 @@
               <form [formGroup]="addMissionSkillForm">
                 <div class="row" style="padding: 3px 10px 3px 10px;">
                   <input type="hidden" formControlName="id">
-                  
+                  <div class="form-group">
+                    <label class="col-form-label">Skill Name</label>
+                    <input type="text" class="form-control" formControlName="skillName" [class.error]="addMissionSkillForm.controls['skillName'].dirty && addMissionSkillForm.hasError('required', 'skillName')">
+                    <span class="text-danger" *ngIf="addMissionSkillForm.controls['skillName'].dirty && addMissionSkillForm.hasError('required', 'skillName')">
+                      Skill Name is required
+                    </span>
+                  </div>
                   <div class="form-group">
                     <label class="col-form-label">Status</label>
                     <select class="form-select"formControlName="status" [class.error]="addMissionSkillForm.controls['status'].dirty && addMissionSkillForm.hasError('required','status')">

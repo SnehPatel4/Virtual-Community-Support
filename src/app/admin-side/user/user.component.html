@@ -40,6 +40,7 @@
                  <td style="color:#14c506;">{{item.status ? 'active':'inactive'}}</td>
                  <td style="text-align: right;">
                   <button class="btnedit" routerLink="../editUser/{{item.id}}"> <i class="fa fa-edit "></i> </button>
+                  <button class="btndelete" (click)="DeleteUser()"> <i class="fa fa-trash"></i> </button>
                  </td>
                </tr>
                <tr *ngIf="result.length === 0">

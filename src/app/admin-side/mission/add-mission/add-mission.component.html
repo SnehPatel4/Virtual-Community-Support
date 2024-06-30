@@ -30,6 +30,20 @@
                         Please Select City
                       </span>
                     </div>
+                    <div class="col-sm-6">
+                      <label class="col-form-label">Mission Title</label>
+                      <textarea class="form-control" row="3" placeholder="Enter your message" formControlName="missionTitle"></textarea>
+                      <span class="text-danger" *ngIf="missionTitle.invalid && (missionTitle.touched || formValid)">
+                        Please Enter Mission Title
+                      </span>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="col-form-label">Mission Theme</label>
+                      <textarea class="form-control" row="3" placeholder="Enter your message" formControlName="missionTheme"></textarea>
+                      <span class="text-danger" *ngIf="missionThemeId.invalid && (missionThemeId.touched || formValid)">
+                        Please Enter Mission Theme
+                      </span>
+                    </div>
                   </div>
                   
                    <div class="row">

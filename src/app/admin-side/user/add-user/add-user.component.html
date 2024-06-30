@@ -16,6 +16,20 @@
                         Please Enter FirstName
                       </span>
                     </div>
+                    <div class="form-group">
+                      <label class="col-form-label">Last Name</label>
+                      <input type="text" class="form-control" formControlName="lastName" placeholder="evan" autofocus>
+                      <span class="text-danger mb-0" *ngIf="lastName.invalid &&  (lastName.touched || formValid)">
+                        Please Enter LastName
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-form-label">Phone Number</label>
+                      <input type="text" class="form-control" formControlName="phoneNumber" placeholder="+919999999999" autofocus>
+                      <span class="text-danger mb-0" *ngIf="phoneNumber.invalid &&  (phoneNumber.touched || formValid)">
+                        Please Enter Phone Number
+                      </span>
+                    </div>
                    
                     <div class="form-group">
                       <label class="col-form-label">Email Address</label>
