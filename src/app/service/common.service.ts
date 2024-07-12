@@ -3,25 +3,24 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommonService {
+  constructor(private http: HttpClient) {}
+  apiUrl: string = 'http://localhost:5140/api';
+  imageUrl: string = 'http://localhost:5140';
+  searchList: BehaviorSubject<any> = new BehaviorSubject<any>('');
 
-  constructor(private http:HttpClient) { }
-  apiUrl:string='http://localhost:56577/api';
-  imageUrl:string='http://localhost:56577';
-  searchList : BehaviorSubject<any> = new BehaviorSubject<any>('');
-
-  GetMissionCountryList(){
+  GetMissionCountryList() {
     return this.http.get(`${this.apiUrl}/Common/MissionCountryList`);
   }
-  GetMissionCityList(){
+  GetMissionCityList() {
     return this.http.get(`${this.apiUrl}/Common/MissionCityList`);
   }
-  GetMissionThemeList(){
+  GetMissionThemeList() {
     return this.http.get(`${this.apiUrl}/Common/MissionThemeList`);
   }
-  GetMissionSkillList(){
+  GetMissionSkillList() {
     return this.http.get(`${this.apiUrl}/Common/MissionSkillList`);
   }
 }

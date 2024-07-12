@@ -17,8 +17,8 @@ export class AdminsideServiceService {
     public router: Router
   ) {}
   // apiUrl:string='http://localhost:63943/api';
-  apiUrl: string = 'http://localhost:56577/api';
-  imageUrl: string = 'http://localhost:56577';
+  apiUrl: string = 'http://localhost:5140/api';
+  imageUrl: string = 'http://localhost:5140';
 
   //User
   UserList(): Observable<any[]> {
@@ -50,17 +50,21 @@ export class AdminsideServiceService {
   }
 
   //Mission
-  GetMissionThemeList():Observable<MissionTheme[]>{
-    return this.http.get<MissionTheme[]>(`${this.apiUrl}/Mission/GetMissionThemeList`);
+  GetMissionThemeList(): Observable<MissionTheme[]> {
+    return this.http.get<MissionTheme[]>(
+      `${this.apiUrl}/Mission/GetMissionThemeList`
+    );
   }
-  GetMissionSkillList():Observable<MissionSkill[]>{
-    return this.http.get<MissionSkill[]>(`${this.apiUrl}/Mission/GetMissionSkillList`);
+  GetMissionSkillList(): Observable<MissionSkill[]> {
+    return this.http.get<MissionSkill[]>(
+      `${this.apiUrl}/Mission/GetMissionSkillList`
+    );
   }
   UploadImage(data: any) {
-    return this.http.post(`${this.apiUrl}/Common/UploadImage`,data);
+    return this.http.post(`${this.apiUrl}/Common/UploadImage`, data);
   }
   UploadDoc(data: any) {
-    return this.http.post(`${this.apiUrl}/Mission/UploadImage`,data);
+    return this.http.post(`${this.apiUrl}/Mission/UploadImage`, data);
   }
   MissionList(): Observable<Mission[]> {
     return this.http.get<Mission[]>(`${this.apiUrl}/Mission/MissionList`);
@@ -93,12 +97,18 @@ export class AdminsideServiceService {
     );
   }
 
-  MissionApplicationDelete(data: MissionApplication){
-    return this.http.post(`${this.apiUrl}/Mission/MissionApplicationDelete`, data);
+  MissionApplicationDelete(data: MissionApplication) {
+    return this.http.post(
+      `${this.apiUrl}/Mission/MissionApplicationDelete`,
+      data
+    );
   }
 
-  MissionApplicationApprove(data: MissionApplication){
-    return this.http.post(`${this.apiUrl}/Mission/MissionApplicationApprove`, data);
+  MissionApplicationApprove(data: MissionApplication) {
+    return this.http.post(
+      `${this.apiUrl}/Mission/MissionApplicationApprove`,
+      data
+    );
   }
 
   //Mission Theme
